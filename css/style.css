@@ -24,6 +24,7 @@ body {
     justify-content: left;
     align-items: center;
     padding: 0px;
+    margin: 0px;
 }
 
 li a {
@@ -38,8 +39,8 @@ li a {
     justify-content: center;
     align-items: center;
     align-content: center;
-    padding: 20px;
-    margin: 20px;
+    padding: 5px;
+    margin: 15px;
     border-radius: 15px;
     border: black 4px solid;
     transition: transform 1s;

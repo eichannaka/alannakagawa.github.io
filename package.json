@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/eichannaka/alannakagawa.github.io/issues"
   },
-  "homepage": "https://github.com/eichannaka/alannakagawa.github.io#readme"
+  "homepage": "https://github.com/eichannaka/alannakagawa.github.io#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
 }
