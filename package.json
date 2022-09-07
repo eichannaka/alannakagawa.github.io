@@ -4,7 +4,8 @@
   "description": "��#\u0000 \u0000c\u0000l\u0000a\u0000s\u0000e\u0000_\u00008\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss":"node-sass --watch scss -o css"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,6 @@
   "homepage": "https://github.com/eichannaka/alannakagawa.github.io#readme",
   "dependencies": {
     "node-sass": "^7.0.1"
-  }
+  },
+  "devDependencies": {}
 }

@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif; }
+
+body {
+  background: linear-gradient(40deg, #002B5B, #8FE3CF); }
+
+.contenedor-nav {
+  outline: 5px white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 130px;
+  gap: 20px;
+  background-color: #00acee; }
+
+.nav_ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none; }
+  .nav_ul li a {
+    color: black;
+    text-decoration: none;
+    width: auto; }
+  .nav_ul .boton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 5px;
+    margin: 15px;
+    border-radius: 15px;
+    border: black 4px solid;
+    transition: transform 1s; }
+  .nav_ul .boton:hover {
+    background: linear-gradient(60deg, #1f1ff7, aqua);
+    transform: scale(1.3);
+    color: #a80606; }
+
+.contenedor-body {
+  outline: 5px white;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 250px 800px 800px 800px 80px;
+  gap: 20px; }
+
+.item {
+  flex-flow: column wrap;
+  color: antiquewhite;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; }
+
+.sub {
+  color: white;
+  border: solid white 3px;
+  margin-top: 20px;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  width: 300px;
+  height: 150px;
+  justify-self: center;
+  align-self: center; }
+
+/* Notificaciones */
+.not1 {
+  grid-column: 2/3;
+  grid-row: 2/3; }
+
+.not2 {
+  grid-column: 2/3;
+  grid-row: 3/4; }
+
+.not3 {
+  width: 100%;
+  grid-column: 2/3;
+  grid-row: 4/5; }
+
+.not1,
+.not2,
+.not3 {
+  background-color: #357e7e;
+  border: solid 3px wheat;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 20px;
+  border-radius: 20px; }
+
+/* Footer */
+footer {
+  grid-column: 1/-1;
+  grid-row: 5/6; }
+
+.pie {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px; }
+
+/* Responsive */
+@media screen and (max-width: 576px) {
+  .contenedor-nav {
+    width: auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto; }
+    .contenedor-nav .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .contenedor-nav .nav .nav_ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0px; }
+        .contenedor-nav .nav .nav_ul .boton {
+          text-decoration: none; } }
+
+@media screen and (max-width: 576px) and (max-width: 576px) {
+  .contenedor-body {
+    outline: 5px white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 600px 600px 600px 100px 80px;
+    gap: 20px; }
+    .contenedor-body .not1 {
+      grid-column: 1/2;
+      grid-row: 2/3; }
+    .contenedor-body .not2 {
+      grid-column: 1/2;
+      grid-row: 3/4; }
+    .contenedor-body .not3 {
+      width: 100%;
+      grid-column: 1/2;
+      grid-row: 4/5; }
+    .contenedor-body .not1,
+    .contenedor-body .not2,
+    .contenedor-body .not3 {
+      background-color: #357e7e;
+      border: solid 3px wheat;
+      padding: 10px 0px 10px 0px;
+      margin-bottom: 20px;
+      border-radius: 20px; }
+  .articulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px; }
+  .sub {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    width: 500px;
+    padding: 0px;
+    justify-self: center;
+    align-self: center; }
+  .container {
+    outline: 5px white;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 350px 1fr .5fr;
+    gap: 20px;
+    overflow: hidden; }
+  .fotoperfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 40%;
+    font-size: 0.5em; }
+  footer {
+    grid-column: 1/-1;
+    grid-row: 6/7; }
+  .pie-index {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px; } }
