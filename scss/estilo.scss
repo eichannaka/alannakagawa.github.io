@@ -1,5 +1,7 @@
+$font-family: 'Times New Roman', Times, serif;
 $color-nav: #00acee;
 $color-titulo: linear-gradient(60deg, rgb(31, 31, 247), aqua);
+$color-hover:rgb(168, 6, 6);
 
 * {
     margin: 0;
@@ -17,7 +19,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 130px;
     gap: 20px;
-    background-color: #00acee;
+    background-color: $color-nav;
 }
 
 .nav_ul {
@@ -51,7 +53,7 @@ body {
     .boton:hover {
         background: linear-gradient(60deg, rgb(31, 31, 247), aqua);
         transform: scale(1.3);
-        color: rgb(168, 6, 6);
+        color: $color-hover;
     }
 }
 
@@ -193,6 +195,7 @@ footer {
                 border-radius: 20px;
             }
         }
+
         .articulo {
             display: flex;
             flex-direction: column;
