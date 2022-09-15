@@ -94,10 +94,20 @@ body {
 
     /* Perfil */
     .portada {
+        background-image: url(../img/portada.jpg);
+        background-size: cover;
+        height: 350px;
         grid-column: 2/3;
         grid-row: 1/2;
-        border: solid 5px black
-    }
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: auto;
+            justify-content: center;
+            align-items: center;
+        }
+        }
 
     .fotoperfil {
         grid-column: 2/3;
@@ -105,14 +115,16 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: end;
-        align-items: flex-end;
+        align-items: flex-start;
     }
 
     .descripcion {
-        @include tamaño(auto, auto, 20px, 0px, 0px);
         grid-column: 2/3;
         grid-row: 2/3;
         background: linear-gradient(40deg, rgb(53, 126, 126), rgb(11, 56, 56));
+        padding: 20px;
+        border: solid 3px black;
+
     }
 
     .container-md {
@@ -347,7 +359,6 @@ footer {
 
             /* Perfil */
             .portada {
-                height: 100%;
                 grid-column: 1/2;
                 grid-row: 1/2;
                 border: solid 5px black
@@ -358,8 +369,8 @@ footer {
                 grid-row: 1/2;
                 display: flex;
                 flex-direction: column;
-                justify-content: end;
-                align-items: flex-end;
+                justify-content: star;
+                align-items: flex-start;
             }
 
             .descripcion {
