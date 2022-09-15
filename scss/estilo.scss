@@ -1,13 +1,42 @@
 $font-family: 'Times New Roman', Times, serif;
-$color-nav: #00acee;
 $color-titulo: linear-gradient(60deg, rgb(31, 31, 247), aqua);
-$color-hover:rgb(168, 6, 6);
+$color-hover: rgb(168, 6, 6);
 
 * {
     margin: 0;
     padding: 0;
     font-family: 'Times New Roman', Times, serif;
 }
+
+/*Each maps */
+$foot: (
+    nav:#55acee,
+    pie:white,
+);
+
+@each $footer,
+$color in $foot {
+    .fa-#{$footer} {
+        background-color: $color;
+    }
+}
+
+/* Mixin */
+@mixin tamaño ($ancho, $alto, $padding, $margin, $border) {
+    width: $ancho;
+    height: $alto;
+    padding: $padding;
+    margin: $margin;
+    border-radius: $border;
+}
+
+@mixin flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 body {
     background: linear-gradient(40deg, #002B5B, #8FE3CF);
@@ -19,7 +48,6 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 130px;
     gap: 20px;
-    background-color: $color-nav;
 }
 
 .nav_ul {
@@ -30,6 +58,7 @@ body {
     padding: 0px;
     margin: 0px;
     text-decoration: none;
+    list-style: none;
 
     li a {
         color: black;
@@ -51,7 +80,7 @@ body {
     }
 
     .boton:hover {
-        background: linear-gradient(60deg, rgb(31, 31, 247), aqua);
+        background: linear-gradient(40deg, rgb(31, 31, 247), aqua);
         transform: scale(1.3);
         color: $color-hover;
     }
@@ -61,60 +90,170 @@ body {
     outline: 5px rgb(255, 255, 255);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 250px 800px 800px 800px 80px;
-    gap: 20px;
+    grid-template-rows: auto auto 800px 800px auto;
+
+    /* Perfil */
+    .portada {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        border: solid 5px black
+    }
+
+    .fotoperfil {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: flex-end;
+    }
+
+    .descripcion {
+        @include tamaño(auto, auto, 20px, 0px, 0px);
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background: linear-gradient(40deg, rgb(53, 126, 126), rgb(11, 56, 56));
+    }
+
+    .container-md {
+        @include tamaño(auto, auto, 20px, 20px, 20px);
+        background: linear-gradient(40deg, rgb(53, 126, 126), aqua);
+        background-color: rgb(53, 126, 126);
+        border: solid 3px black;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .item {
+        @include flex-center();
+        color: antiquewhite;
+        font-size: 2rem;
+        gap: 40px;
+    }
+
+    .sub {
+        color: rgb(255, 255, 255);
+        border: solid rgb(255, 255, 255) 3px;
+        margin-top: 20px;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        width: 300px;
+        height: 150px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    /* Tweet */
+    .tweet1 {
+        @include tamaño(auto, auto, 20px, 20px, 20px);
+        grid-column: 2/3;
+        grid-row: 2/3;
+        transition: transform 1s;
+
+    }
+
+    .tweet2 {
+        @include tamaño(auto, auto, 20px, 20px, 20px);
+        grid-column: 2/3;
+        grid-row: 3/4;
+        transition: transform 1s;
+    }
+
+    .tweet1:hover,
+    .tweet2:hover {
+        margin: 30px;
+        transform: scale(1.2);
+        font-size: 3rem;
+    }
+
+    .tendencia {
+        grid-column: 3/4;
+        grid-row: 2/3;
+        border-radius: 20%;
+        background-color: #002B5B;
+        width: auto;
+        height: auto;
+        margin: 50px;
+        padding: 30px;
+    }
+
+    /* articulo */
+    .articulo {
+        @include tamaño(auto, auto, 20px, 20px, 20px);
+        background: linear-gradient(40deg, rgb(53, 126, 126), rgb(11, 56, 56));
+        border: solid 3px black;
+
+    }
+
+
+
+    /* Notificaciones */
+
+    .not1 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .not2 {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    .not3 {
+        width: 100%;
+        grid-column: 2/3;
+        grid-row: 4/5;
+
+    }
+
+    .not1,
+    .not2,
+    .not3 {
+        @include tamaño(auto, auto, 20px, 20px, 20px);
+        background-color: rgb(53, 126, 126);
+        border: solid 4px black;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Mensaje */
+    .men1 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .men2 {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    .men3 {
+        grid-column: 2/3;
+        grid-row: 4/5;
+
+    }
+
+    .men1,
+    .men2,
+    .men3 {
+        background-color: rgb(53, 126, 126);
+        margin: 30px;
+        border-radius: 20px;
+        width: auto;
+        border: solid 3px black;
+    }
+    .form{
+        font-size: 2rem;
+        grid-column: 3/4;
+        grid-row: 2/3;
+        @include tamaño(auto, auto, 20px, 20px, 20px);
+        background: linear-gradient(40deg, rgb(53, 126, 126), aqua);
+        background-color: rgb(53, 126, 126);
+        border: solid 3px black;
+    }
 }
 
-.item {
-    flex-flow: column wrap;
-    color: antiquewhite;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-}
-
-.sub {
-    color: rgb(255, 255, 255);
-    border: solid rgb(255, 255, 255) 3px;
-    margin-top: 20px;
-    grid-column: 2/3;
-    grid-row: 1/2;
-    width: 300px;
-    height: 150px;
-    justify-self: center;
-    align-self: center;
-}
-
-/* Notificaciones */
-
-.not1 {
-    grid-column: 2/3;
-    grid-row: 2/3;
-}
-
-.not2 {
-    grid-column: 2/3;
-    grid-row: 3/4;
-}
-
-.not3 {
-    width: 100%;
-    grid-column: 2/3;
-    grid-row: 4/5;
-
-}
-
-.not1,
-.not2,
-.not3 {
-    background-color: rgb(53, 126, 126);
-    border: solid 3px wheat;
-    padding: 10px 0px 10px 0px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-}
 
 /* Footer */
 footer {
@@ -123,12 +262,10 @@ footer {
 }
 
 .pie {
-    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px;
 }
 
 /* Responsive */
@@ -140,23 +277,18 @@ footer {
         grid-template-columns: auto;
         grid-template-rows: auto;
 
-        .nav {
+        .nav_ul {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            margin: 0px;
 
-            .nav_ul {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin: 0px;
+            .boton {
+                text-decoration: none;
 
-                .boton {
-                    text-decoration: none;
-
-                }
             }
+
         }
     }
 
@@ -165,8 +297,87 @@ footer {
             outline: 5px rgb(255, 255, 255);
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 100px 600px 600px 600px 100px 80px;
-            gap: 20px;
+            grid-template-rows: auto auto auto auto auto auto;
+
+
+            /* index */
+            .container-md {
+                @include tamaño(auto, auto, 20px, 20px, 20px);
+                background: linear-gradient(40deg, rgb(53, 126, 126), aqua);
+                background-color: rgb(53, 126, 126);
+                border: solid 3px black;
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+
+            /* Tweet */
+            .tweet1 {
+                @include tamaño(auto, auto, 20px, 20px, 20px);
+                grid-column: 1/2;
+                grid-row: 2/3;
+                transition: transform 1s;
+
+            }
+
+            .tweet2 {
+                @include tamaño(auto, auto, 20px, 20px, 20px);
+                grid-column: 1/2;
+                grid-row: 3/4;
+                transition: transform 1s;
+            }
+
+            .tweet1:hover,
+            .tweet2:hover {
+                margin: 30px;
+                transform: scale(1.2);
+                color: rgb(255, 255, 255);
+
+            }
+
+            .tendencia {
+                grid-column: 1/2;
+                grid-row: 4/5;
+                border-radius: 20px;
+                background-color: #002B5B;
+                width: auto;
+                height: auto;
+                margin: 50px;
+                padding: 30px;
+            }
+
+            /* Perfil */
+            .portada {
+                height: 100%;
+                grid-column: 1/2;
+                grid-row: 1/2;
+                border: solid 5px black
+            }
+
+            .fotoperfil {
+                grid-column: 1/2;
+                grid-row: 1/2;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                align-items: flex-end;
+            }
+
+            .descripcion {
+                height: 100%;
+                grid-column: 1/2;
+                grid-row: 2/3;
+                background: linear-gradient(40deg, rgb(53, 126, 126), rgb(11, 56, 56));
+            }
+
+            .sub {
+                grid-row: 1/2;
+                grid-column: 1/2;
+                width: 60%;
+                height: auto;
+                border-radius: 30px;
+                justify-self: center;
+                align-self: center;
+            }
 
             .not1 {
                 grid-column: 1/2;
@@ -179,7 +390,6 @@ footer {
             }
 
             .not3 {
-                width: 100%;
                 grid-column: 1/2;
                 grid-row: 4/5;
 
@@ -189,10 +399,44 @@ footer {
             .not2,
             .not3 {
                 background-color: rgb(53, 126, 126);
-                border: solid 3px wheat;
-                padding: 10px 0px 10px 0px;
-                margin-bottom: 20px;
+                margin: 30px;
                 border-radius: 20px;
+                width: auto;
+            }
+
+            /* Mensaje */
+            .men1 {
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+
+            .men2 {
+                grid-column: 1/2;
+                grid-row: 3/4;
+            }
+
+            .men3 {
+                grid-column: 1/2;
+                grid-row: 4/5;
+
+            }
+
+            .men1,
+            .men2,
+            .men3 {
+                background-color: rgb(53, 126, 126);
+                margin: 30px;
+                border-radius: 20px;
+                width: auto;
+            }
+            .form{
+                font-size: 2rem;
+                grid-column:1/2;
+                grid-row: 5/6;
+                @include tamaño(auto, auto, 20px, 20px, 20px);
+                background: linear-gradient(40deg, rgb(53, 126, 126), aqua);
+                background-color: rgb(53, 126, 126);
+                border: solid 3px black;
             }
         }
 
@@ -204,47 +448,18 @@ footer {
             margin: 0px;
         }
 
-        .sub {
-            grid-row: 1/2;
-            grid-column: 1/2;
-            width: 500px;
-            padding: 0px;
-            justify-self: center;
-            align-self: center;
-        }
-
-
-        .container {
-            outline: 5px rgb(255, 255, 255);
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: 350px 1fr .5fr;
-            gap: 20px;
-            overflow: hidden;
-        }
-
-        .fotoperfil {
-            display: flex;
-            flex-direction: row;
-            justify-content: start;
-            align-items: flex-start;
-            align-content: flex-start;
-            width: 40%;
-            font-size: 0.5em;
-        }
-
         footer {
             grid-column: 1/-1;
             grid-row: 6/7;
         }
 
-        .pie-index {
+        .pie {
+            margin-top: 20px;
             background-color: white;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            padding: 10px;
         }
     }
 }
